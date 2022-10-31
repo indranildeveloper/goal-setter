@@ -5,6 +5,7 @@ import colors from "colors";
 import connectDB from "./config/db";
 import { errorHandler } from "./middleware/errorMiddleware";
 import goalRoutes from "./routes/goalRoutes";
+import userRoutes from "./routes/userRoutes";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 const port = process.env.PORT || 5000;
 
 app.use("/api/goals", goalRoutes);
+app.use("/api/users", userRoutes);
 app.use(errorHandler);
 
-app.listen(port, (req, res) => console.log(`Server running at port: ${port}`));
+app.listen(port, () => console.log(`Server running at port: ${port}`));
