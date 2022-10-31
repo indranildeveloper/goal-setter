@@ -1,6 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
+import colors from "colors";
 
+import connectDB from "./config/db";
 import { errorHandler } from "./middleware/errorMiddleware";
 import goalRoutes from "./routes/goalRoutes";
 
@@ -8,6 +10,7 @@ dotenv.config();
 
 const app = express();
 
+connectDB();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
