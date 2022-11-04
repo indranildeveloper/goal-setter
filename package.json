@@ -9,7 +9,12 @@
     "start": "node -r esm server/server.js",
     "server": "nodemon -r esm server/server.js",
     "client": "yarn --cwd client start",
+    "client-build": "yarn --cwd client build",
     "dev": "concurrently \"yarn server\" \"yarn client\""
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": "8.x"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
