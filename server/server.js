@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import colors from "colors";
-
+import cors from "cors";
 import connectDB from "./config/db";
 import { errorHandler } from "./middleware/errorMiddleware";
 import goalRoutes from "./routes/goalRoutes";
@@ -14,6 +14,7 @@ const app = express();
 connectDB();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 
 const port = process.env.PORT || 5000;
 
