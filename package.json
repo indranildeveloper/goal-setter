@@ -10,7 +10,8 @@
     "server": "nodemon -r esm server/server.js",
     "client": "yarn --cwd client start",
     "client-build": "yarn --cwd client build",
-    "dev": "concurrently \"yarn server\" \"yarn client\""
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "build": "concurrently \"yarn client-build\" \"yarn start\""
   },
   "engines": {
     "node": "18.x",
